@@ -5,3 +5,6 @@ greenhouse:
     - sensor.garden_greenhouse_temperature
     - sensor.garden_greenhouse_humidity
     - sensor.garden_greenhouse_soil_humidity
+    - switch.garden_greenhouse_water_pump
+    - binary_sensor.garden_greenhouse_sensor_motion
+    - switch.garden_greenhouse_switch_sprinklers

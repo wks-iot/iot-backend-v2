@@ -82,7 +82,31 @@ sensor:
     unique_id: garden_greenhouse_sensor_soil_humidity
     name: "Wilgotność gleby"
     unit_of_measurement: '%'
-  
+
+switch:
+  - platform: mqtt
+    unique_id: garden_greenhouse_switch_pump
+    name: "Pompa wody"
+    state_topic: "garden/greenhouse/waterpump"
+    command_topic: "garden/greenhouse/waterpump/set"
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    unique_id: garden_greenhouse_switch_sprinklers
+    name: "Zraszacze"
+    state_topic: "garden/greenhouse/sprinklers"
+    command_topic: "garden/greenhouse/sprinklers/set"
+    payload_on: "1"
+    payload_off: "0"
+    
+binary_sensor:
+  - platform: mqtt
+    state_topic: "garden/greenhouse/motion"
+    unique_id: garden_greenhouse_sensor_motion
+    name: "Ruch"
+    device_class: motion
+    payload_on: "1"
+    payload_off: "0"
 
 # Text to speech
 tts:
