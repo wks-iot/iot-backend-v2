@@ -14,16 +14,10 @@ homeassistant:
   customize: !include customize.yaml
 
 # Show links to resources in log and frontend
-# introduction:
+introduction:
 
 # Enables the frontend
 frontend:
-
-panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
-    url: http://192.168.1.109:3218
 
 # Enables configuration UI
 config:
@@ -61,70 +55,9 @@ map:
 # Track the sun
 sun:
 
-mqtt:
-  broker: 192.168.1.109
-  
-notify:
-  - name: Hassio
-    platform: pushbullet
-    api_key: YOUR_TOKEN
-
 # Weather prediction
 sensor:
   - platform: yr
-  - platform: mqtt
-    state_topic: "garden/greenhouse/humidity"
-    unique_id: garden_greenhouse_sensor_humidity
-    name: "Wilgotność powietrza"
-    unit_of_measurement: '%'  
-  - platform: mqtt
-    state_topic: "garden/greenhouse/temperature"
-    unique_id: garden_greenhouse_sensor_temperature
-    name: "Temperatura"
-    unit_of_measurement: 'C'  
-  - platform: mqtt
-    state_topic: "garden/greenhouse/soil_humidity"
-    unique_id: garden_greenhouse_sensor_soil_humidity
-    name: "Wilgotność gleby"
-    unit_of_measurement: '%'
-    
-binary_sensor:
-  - platform: mqtt
-    state_topic: "garden/greenhouse/motion"
-    unique_id: garden_greenhouse_sensor_motion
-    name: "Ruch"
-    device_class: motion
-    payload_on: "1"
-    payload_off: "0"
-  - platform: mqtt
-    state_topic: "garden/greenhouse/window"
-    unique_id: garden_greenhouse_sensor_window
-    name: "Okno"
-    device_class: window
-    payload_on: "1"
-    payload_off: "0"
-
-switch:
-  - platform: mqtt
-    unique_id: garden_greenhouse_switch_pump
-    name: "Pompa wody"
-    state_topic: "garden/greenhouse/waterpump"
-    command_topic: "garden/greenhouse/waterpump/set"
-    payload_on: "1"
-    payload_off: "0"
-  - platform: mqtt
-    unique_id: garden_greenhouse_switch_sprinklers
-    name: "Zraszacze"
-    state_topic: "garden/greenhouse/sprinklers"
-    command_topic: "garden/greenhouse/sprinklers/set"
-    payload_on: "1"
-    payload_off: "0"
-
-input_boolean:
-  toggle_garden_greenhouse_trap_automation:
-    name: "Uzbrajanie/rozbrajanie pułapki"
-    initial: on
-    icon: mdi:wrench
 
 # Text to speech
 tts:
