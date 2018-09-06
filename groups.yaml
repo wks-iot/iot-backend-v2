@@ -7,4 +7,10 @@ greenhouse:
     - sensor.garden_greenhouse_soil_humidity
     - switch.garden_greenhouse_water_pump
     - binary_sensor.garden_greenhouse_sensor_motion
+
+trap:
+  name: "Pułapka spryskiwaczy"
+  control: hidden
+  entities:
+    - input_boolean.toggle_garden_greenhouse_trap_automation
     - switch.garden_greenhouse_switch_sprinklers

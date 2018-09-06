@@ -107,6 +107,12 @@ binary_sensor:
     device_class: motion
     payload_on: "1"
     payload_off: "0"
+    
+input_boolean:
+  toggle_garden_greenhouse_trap_automation:
+    name: "Uzbrajanie/rozbrajanie pułapki"
+    initial: on
+    icon: mdi:wrench
 
 # Text to speech
 tts:
