@@ -1,0 +1,7 @@
+greenhouse:
+  name: "Szklarnia"
+  control: hidden
+  entities:
+    - sensor.garden_greenhouse_temperature
+    - sensor.garden_greenhouse_humidity
+    - sensor.garden_greenhouse_soil_humidity

@@ -14,7 +14,16 @@ homeassistant:
   customize: !include customize.yaml
 
 # Show links to resources in log and frontend
-introduction:
+#introduction:
+
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: http://192.168.1.106:3218
+
+mqtt:
+  broker: 192.168.1.106
 
 # Enables the frontend
 frontend:
@@ -58,6 +67,22 @@ sun:
 # Weather prediction
 sensor:
   - platform: yr
+  - platform: mqtt
+    state_topic: "garden/greenhouse/humidity"
+    unique_id: garden_greenhouse_sensor_humidity
+    name: "Wilgotność powietrza"
+    unit_of_measurement: '%'  
+  - platform: mqtt
+    state_topic: "garden/greenhouse/temperature"
+    unique_id: garden_greenhouse_sensor_temperature
+    name: "Temperatura"
+    unit_of_measurement: 'C'  
+  - platform: mqtt
+    state_topic: "garden/greenhouse/soil_humidity"
+    unique_id: garden_greenhouse_sensor_soil_humidity
+    name: "Wilgotność gleby"
+    unit_of_measurement: '%'
+  
 
 # Text to speech
 tts:

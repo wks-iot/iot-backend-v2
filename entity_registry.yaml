@@ -1,0 +1,15 @@
+sensor.garden_greenhouse_soil_humidity:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: garden_greenhouse_sensor_soil_humidity
+sensor.garden_greenhouse_temperature:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: garden_greenhouse_sensor_temperature
+sensor.garden_greenhouse_humidity:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: garden_greenhouse_sensor_humidity
